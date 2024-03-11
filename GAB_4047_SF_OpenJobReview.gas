@@ -1,0 +1,1991 @@
+Program.Sub.ScreenSU.Start
+gui.F_Main..create
+gui.F_Main..caption("F_Main Form")
+gui.F_Main..size(19365,9510)
+gui.F_Main..minx(0)
+gui.F_Main..miny(0)
+gui.F_Main..position(0,0)
+gui.F_Main..event(resize,E_F_Main_Resize)
+gui.F_Main..event(unload,subExit)
+gui.F_Main..alwaysontop(False)
+gui.F_Main..fontname("Arial")
+gui.F_Main..fontsize(8)
+gui.F_Main..forecolor(0)
+gui.F_Main..fontstyle(,,,,)
+gui.F_Main..BackColor(-2147483633)
+gui.F_Main..controlbox(True)
+gui.F_Main..maxbutton(True)
+gui.F_Main..minbutton(True)
+gui.F_Main..mousepointer(0)
+gui.F_Main..moveable(True)
+gui.F_Main..sizeable(True)
+gui.F_Main..ShowInTaskBar(True)
+gui.F_Main..titlebar(True)
+gui.F_Main.frmLowerHalf.create(frame)
+gui.F_Main.frmLowerHalf.caption("")
+gui.F_Main.frmLowerHalf.size(8100,1875)
+gui.F_Main.frmLowerHalf.position(75,6885)
+gui.F_Main.frmLowerHalf.visible(True)
+gui.F_Main.frmLowerHalf.borderstyle(0)
+gui.F_Main.frmLowerHalf.fontname("Arial")
+gui.F_Main.frmLowerHalf.fontsize(8)
+gui.F_Main.frmFilter.create(frame)
+gui.F_Main.frmFilter.caption("Filters")
+gui.F_Main.frmFilter.parent("frmlowerhalf")
+gui.F_Main.frmFilter.size(6720,975)
+gui.F_Main.frmFilter.position(1325,200)
+gui.F_Main.frmFilter.visible(True)
+gui.F_Main.frmFilter.fontname("Arial")
+gui.F_Main.frmFilter.fontsize(8)
+gui.F_Main.frmWOopt.create(frame)
+gui.F_Main.frmWOopt.caption("WO Opt")
+gui.F_Main.frmWOopt.parent("frmlowerhalf")
+gui.F_Main.frmWOopt.size(930,960)
+gui.F_Main.frmWOopt.position(200,200)
+gui.F_Main.frmWOopt.visible(True)
+gui.F_Main.frmWOopt.fontname("Arial")
+gui.F_Main.frmWOopt.fontsize(8)
+gui.F_Main.fgOpenJobs.create(gsflexgrid)
+gui.F_Main.fgOpenJobs.FixedRows(0)
+gui.F_Main.fgOpenJobs.FixedCols(0)
+gui.F_Main.fgOpenJobs.visible(True)
+gui.F_Main.fgOpenJobs.size(19125,6885)
+gui.F_Main.fgOpenJobs.zorder(0)
+gui.F_Main.fgOpenJobs.position(-5,105)
+gui.F_Main.fgOpenJobs.enabled(True)
+gui.F_Main.fgOpenJobs.event(mouseup,E_fgOpenJobs_MouseUp)
+gui.F_Main.fgOpenJobs.event(posttextmatrix,fgopenjobs_posttextmatrix)
+gui.F_Main.fgOpenJobs.event(cellenter,E_fgOpenJobs_CellEnter)
+gui.F_Main.fgOpenJobs.event(checkclick,fgopenjobs_checkclick)
+gui.F_Main.cmdExportExcel.create(button)
+gui.F_Main.cmdExportExcel.caption("Export to Microsoft Excel")
+gui.F_Main.cmdExportExcel.visible(True)
+gui.F_Main.cmdExportExcel.size(2385,375)
+gui.F_Main.cmdExportExcel.zorder(0)
+gui.F_Main.cmdExportExcel.position(210,1320)
+gui.F_Main.cmdExportExcel.enabled(True)
+gui.F_Main.cmdExportExcel.parent("frmlowerhalf")
+gui.F_Main.cmdExportExcel.fontname("Arial")
+gui.F_Main.cmdExportExcel.fontsize(8)
+gui.F_Main.cmdExportExcel.event(click,E_cmdExportExcel_Click)
+gui.F_Main.cmdExportExcel.defaultvalue("")
+gui.F_Main.cmdExportExcel.controlgroup(0)
+gui.F_Main.cmdExportCalc.create(button)
+gui.F_Main.cmdExportCalc.caption("Export to Open Office Calc")
+gui.F_Main.cmdExportCalc.visible(True)
+gui.F_Main.cmdExportCalc.size(2385,375)
+gui.F_Main.cmdExportCalc.zorder(0)
+gui.F_Main.cmdExportCalc.position(2685,1325)
+gui.F_Main.cmdExportCalc.enabled(True)
+gui.F_Main.cmdExportCalc.parent("frmlowerhalf")
+gui.F_Main.cmdExportCalc.fontname("Arial")
+gui.F_Main.cmdExportCalc.fontsize(8)
+gui.F_Main.cmdExportCalc.event(click,E_cmdExportOO_Click)
+gui.F_Main.cmdExportCalc.defaultvalue("")
+gui.F_Main.cmdExportCalc.controlgroup(0)
+gui.F_Main.cmdRefresh.create(button)
+gui.F_Main.cmdRefresh.caption("REFRESH")
+gui.F_Main.cmdRefresh.visible(True)
+gui.F_Main.cmdRefresh.size(2040,540)
+gui.F_Main.cmdRefresh.zorder(0)
+gui.F_Main.cmdRefresh.position(5995,1230)
+gui.F_Main.cmdRefresh.enabled(True)
+gui.F_Main.cmdRefresh.parent("frmlowerhalf")
+gui.F_Main.cmdRefresh.fontname("Arial Black")
+gui.F_Main.cmdRefresh.fontsize(8)
+gui.F_Main.cmdRefresh.event(click,E_cmdRefresh_Click)
+gui.F_Main.cmdRefresh.defaultvalue("")
+gui.F_Main.cmdRefresh.controlgroup(0)
+gui.F_Main.prgLoad.create(progressbar)
+gui.F_Main.prgLoad.visible(True)
+gui.F_Main.prgLoad.size(18930,600)
+gui.F_Main.prgLoad.zorder(0)
+gui.F_Main.prgLoad.position(150,3000)
+gui.F_Main.prgLoad.enabled(True)
+gui.F_Main.lblLoadMsg.create(label,"Label",True,9660,2550,1,2900,2045,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblLoadMsg.defaultvalue("")
+gui.F_Main.lblLoadMsg.controlgroup(0)
+gui.F_Main.cboPrtRel.create(combobox)
+gui.F_Main.cboPrtRel.text("")
+gui.F_Main.cboPrtRel.visible(True)
+gui.F_Main.cboPrtRel.size(1485,330)
+gui.F_Main.cboPrtRel.zorder(0)
+gui.F_Main.cboPrtRel.position(90,545)
+gui.F_Main.cboPrtRel.enabled(True)
+gui.F_Main.cboPrtRel.parent("frmfilter")
+gui.F_Main.cboPrtRel.fontname("Arial")
+gui.F_Main.cboPrtRel.fontsize(8)
+gui.F_Main.cboPrtRel.defaultvalue("")
+gui.F_Main.cboPrtRel.controlgroup(0)
+gui.F_Main.chkPrtRel.create(checkbox)
+gui.F_Main.chkPrtRel.caption("Printed/Released")
+gui.F_Main.chkPrtRel.visible(True)
+gui.F_Main.chkPrtRel.size(1560,225)
+gui.F_Main.chkPrtRel.zorder(0)
+gui.F_Main.chkPrtRel.position(100,300)
+gui.F_Main.chkPrtRel.enabled(True)
+gui.F_Main.chkPrtRel.alignment(0)
+gui.F_Main.chkPrtRel.parent("frmfilter")
+gui.F_Main.chkPrtRel.fontname("Arial")
+gui.F_Main.chkPrtRel.fontsize(8)
+gui.F_Main.chkPrtRel.defaultvalue("")
+gui.F_Main.chkPrtRel.controlgroup(0)
+gui.F_Main.chkLoc.create(checkbox)
+gui.F_Main.chkLoc.caption("Location:")
+gui.F_Main.chkLoc.visible(True)
+gui.F_Main.chkLoc.size(1275,255)
+gui.F_Main.chkLoc.zorder(0)
+gui.F_Main.chkLoc.position(1820,285)
+gui.F_Main.chkLoc.enabled(True)
+gui.F_Main.chkLoc.alignment(0)
+gui.F_Main.chkLoc.parent("frmfilter")
+gui.F_Main.chkLoc.fontname("Arial")
+gui.F_Main.chkLoc.fontsize(8)
+gui.F_Main.chkLoc.defaultvalue("")
+gui.F_Main.chkLoc.controlgroup(0)
+gui.F_Main.txtLoc.create(textbox,"",True,600,300,0,1795,540,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtLoc.parent("frmfilter")
+gui.F_Main.txtLoc.defaultvalue("")
+gui.F_Main.txtLoc.controlgroup(0)
+gui.F_Main.cmdLoc.create(button)
+gui.F_Main.cmdLoc.caption("^")
+gui.F_Main.cmdLoc.visible(True)
+gui.F_Main.cmdLoc.size(315,285)
+gui.F_Main.cmdLoc.zorder(0)
+gui.F_Main.cmdLoc.position(2380,555)
+gui.F_Main.cmdLoc.enabled(True)
+gui.F_Main.cmdLoc.parent("frmfilter")
+gui.F_Main.cmdLoc.fontname("Arial")
+gui.F_Main.cmdLoc.fontsize(8)
+gui.F_Main.cmdLoc.event(click,cmdloc_click)
+gui.F_Main.cmdLoc.defaultvalue("")
+gui.F_Main.cmdLoc.controlgroup(0)
+gui.F_Main.chkPL.create(checkbox)
+gui.F_Main.chkPL.caption("PL:")
+gui.F_Main.chkPL.visible(True)
+gui.F_Main.chkPL.size(780,255)
+gui.F_Main.chkPL.zorder(0)
+gui.F_Main.chkPL.position(2880,290)
+gui.F_Main.chkPL.enabled(True)
+gui.F_Main.chkPL.alignment(0)
+gui.F_Main.chkPL.parent("frmfilter")
+gui.F_Main.chkPL.fontname("Arial")
+gui.F_Main.chkPL.fontsize(8)
+gui.F_Main.chkPL.defaultvalue("")
+gui.F_Main.chkPL.controlgroup(0)
+gui.F_Main.txtPL.create(textbox,"",True,495,300,0,2865,535,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtPL.parent("frmfilter")
+gui.F_Main.txtPL.defaultvalue("")
+gui.F_Main.txtPL.controlgroup(0)
+gui.F_Main.cmdPL.create(button)
+gui.F_Main.cmdPL.caption("^")
+gui.F_Main.cmdPL.visible(True)
+gui.F_Main.cmdPL.size(315,285)
+gui.F_Main.cmdPL.zorder(0)
+gui.F_Main.cmdPL.position(3345,535)
+gui.F_Main.cmdPL.enabled(True)
+gui.F_Main.cmdPL.parent("frmfilter")
+gui.F_Main.cmdPL.fontname("Arial")
+gui.F_Main.cmdPL.fontsize(8)
+gui.F_Main.cmdPL.event(click,cmdpl_click)
+gui.F_Main.cmdPL.defaultvalue("")
+gui.F_Main.cmdPL.controlgroup(0)
+gui.F_Main.cmdFilter.create(button)
+gui.F_Main.cmdFilter.caption("FILTER")
+gui.F_Main.cmdFilter.visible(True)
+gui.F_Main.cmdFilter.size(1050,525)
+gui.F_Main.cmdFilter.zorder(0)
+gui.F_Main.cmdFilter.position(5430,300)
+gui.F_Main.cmdFilter.enabled(True)
+gui.F_Main.cmdFilter.parent("frmfilter")
+gui.F_Main.cmdFilter.fontname("Arial Black")
+gui.F_Main.cmdFilter.fontsize(8)
+gui.F_Main.cmdFilter.event(click,cmdfilter_click)
+gui.F_Main.cmdFilter.defaultvalue("")
+gui.F_Main.cmdFilter.controlgroup(0)
+gui.F_Main.optView.create(option)
+gui.F_Main.optView.caption("View")
+gui.F_Main.optView.visible(True)
+gui.F_Main.optView.size(795,255)
+gui.F_Main.optView.zorder(0)
+gui.F_Main.optView.position(80,245)
+gui.F_Main.optView.enabled(True)
+gui.F_Main.optView.alignment(0)
+gui.F_Main.optView.parent("frmwoopt")
+gui.F_Main.optView.fontname("Arial")
+gui.F_Main.optView.fontsize(8)
+gui.F_Main.optView.event(click,optview_click)
+gui.F_Main.optView.defaultvalue("")
+gui.F_Main.optView.controlgroup(0)
+gui.F_Main.optEdit.create(option)
+gui.F_Main.optEdit.caption("Edit")
+gui.F_Main.optEdit.visible(True)
+gui.F_Main.optEdit.size(795,255)
+gui.F_Main.optEdit.zorder(0)
+gui.F_Main.optEdit.position(70,545)
+gui.F_Main.optEdit.enabled(True)
+gui.F_Main.optEdit.alignment(0)
+gui.F_Main.optEdit.parent("frmwoopt")
+gui.F_Main.optEdit.fontname("Arial")
+gui.F_Main.optEdit.fontsize(8)
+gui.F_Main.optEdit.event(click,optedit_click)
+gui.F_Main.optEdit.defaultvalue("")
+gui.F_Main.optEdit.controlgroup(0)
+gui.F_Main.dtpDueDate.create(datepicker)
+gui.F_Main.dtpDueDate.visible(True)
+gui.F_Main.dtpDueDate.size(1470,300)
+gui.F_Main.dtpDueDate.zorder(0)
+gui.F_Main.dtpDueDate.position(3715,545)
+gui.F_Main.dtpDueDate.enabled(True)
+gui.F_Main.dtpDueDate.parent("frmfilter")
+gui.F_Main.dtpDueDate.checkbox(False)
+gui.F_Main.dtpDueDate.defaultvalue("")
+gui.F_Main.dtpDueDate.controlgroup(0)
+gui.F_Main.chkWODue.create(checkbox)
+gui.F_Main.chkWODue.caption("Cut off - Due Dt:")
+gui.F_Main.chkWODue.visible(True)
+gui.F_Main.chkWODue.size(1500,225)
+gui.F_Main.chkWODue.zorder(0)
+gui.F_Main.chkWODue.position(3730,315)
+gui.F_Main.chkWODue.enabled(True)
+gui.F_Main.chkWODue.alignment(0)
+gui.F_Main.chkWODue.parent("frmfilter")
+gui.F_Main.chkWODue.fontname("Arial")
+gui.F_Main.chkWODue.fontsize(8)
+gui.F_Main.chkWODue.defaultvalue("")
+gui.F_Main.chkWODue.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.sSettingsPath.Declare(String)
+Variable.Global.sVersion.Declare(String)
+Variable.Global.iRowCount.Declare(Long,0)
+Variable.Global.bGoodPlList.Declare(Boolean,True)
+Variable.Global.fProgBarValue.Declare(Float,0)
+Variable.Global.sHeader.Declare(String,"Open Job Review")
+Variable.Global.sOldValue.Declare(String)
+Variable.Global.iOldLength.Declare(Long,0)
+Variable.Global.iOldRow.Declare(Long,0)
+
+Variable.UDT.uJobH.Define("JOB",String,JOB)
+Variable.UDT.uJobH.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.uJobH.Define("PART",String,PART)
+Variable.UDT.uJobH.Define("LOCATION",String,LOCATION)
+Variable.UDT.uJobH.Define("PL",String,PRODUCT_LINE)
+Variable.UDT.uJobH.Define("CUST_NAME",String,CUST_NAME)
+Variable.UDT.uJobH.Define("FLAG_WO_PRTD",String,FLAG_WO_PRTD)
+Variable.UDT.uJobH.Define("DATE_DUE",Date,DATE_DUE)
+Variable.UDT.uJobH.Define("DESCRIPTION",String,DESCRIPTION)
+Variable.UDT.uJobH.Define("NUM_HOURS",Float,NUM_HOURS)
+Variable.UDT.uJobH.Define("WO_NOTE",String,WO_NOTE)
+Variable.UDT.uJobH.Define("QTY_LEFT",Float,QTY_LEFT)
+Variable.UDT.uJobH.Define("SCHEDULED_DUE_DATE",Date,SCHEDULED_DUE_DATE)
+Variable.UDT.uJobH.Define("DATE_START",Date,DATE_START)
+Variable.uGlobal.uJobH.Declare("uJobH")
+Variable.Global.sSqlJobHeader.Declare(String)
+Variable.Global.sSQLWC.Declare(String)
+Variable.Global.sSQLRELDATE.Declare(String)
+Variable.UDT.uRelDate.Define("JOB",String,JOB)
+Variable.UDT.uRelDate.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.uRelDate.Define("REL_DATE",String,REL_DATE)
+Variable.uGlobal.uRelDate.Declare("uRelDate")
+Variable.Global.sSQLEst_Hours.Declare(String)
+Variable.UDT.uGrid.Define("Print",String)
+Variable.UDT.uGrid.Define("Released",String)
+Variable.UDT.uGrid.Define("Job",String)
+Variable.UDT.uGrid.Define("Suffix",String)
+Variable.UDT.uGrid.Define("Cust_Name",String)
+Variable.UDT.uGrid.Define("Part",String)
+Variable.UDT.uGrid.Define("Loc",String)
+Variable.UDT.uGrid.Define("PL",String)
+Variable.UDT.uGrid.Define("Description",String)
+Variable.UDT.uGrid.Define("Date_Due",Date)
+Variable.UDT.uGrid.Define("Act_hours",Float)
+Variable.UDT.uGrid.Define("Notes",String)
+Variable.UDT.uGrid.Define("Row",Long)
+Variable.UDT.uGrid.Define("Rel_Date",String)
+Variable.UDT.uGrid.Define("Qty_Left",Float)
+Variable.UDT.uGrid.Define("Date_Sched_Due",Date)
+Variable.UDT.uGrid.Define("Date_Start",Date)
+Variable.uGlobal.uGrid.Declare("uGrid")
+Variable.UDT.uData.Define("Print",String)
+Variable.UDT.uData.Define("Released",String)
+Variable.UDT.uData.Define("Job",String)
+Variable.UDT.uData.Define("Suffix",String)
+Variable.UDT.uData.Define("Cust_Name",String)
+Variable.UDT.uData.Define("Part",String)
+Variable.UDT.uData.Define("Loc",String)
+Variable.UDT.uData.Define("PL",String)
+Variable.UDT.uData.Define("Description",String)
+Variable.UDT.uData.Define("Date_Due",Date)
+Variable.UDT.uData.Define("Act_hours",Float)
+Variable.UDT.uData.Define("Notes",String)
+Variable.UDT.uData.Define("Row",Long)
+Variable.UDT.uData.Define("Rel_Date",String)
+Variable.UDT.uData.Define("Qty_Left",Float)
+Variable.UDT.uData.Define("Date_Sched_Due",Date)
+Variable.UDT.uData.Define("Date_Start",Date)
+Variable.uGlobal.uData.Declare("uData")
+Variable.Global.sSQLOper.Declare(String)
+Variable.Global.bSort.Declare(Boolean,True)
+Variable.Global.iCol.Declare(Long,0)
+Variable.Global.bOptEdit.Declare(Boolean,False)
+Variable.Global.iProgBarVal.Declare(Long,0)
+Variable.Global.iProgBarTotalVal.Declare(Long,0)
+Variable.Global.iRelStatus.Declare(Long,0)
+Variable.Global.iMouseRowChk.Declare(Long,1)
+Variable.Global.iMouseColChk.Declare(Long,1)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+'Coded by RRC 05/15/2014
+'Notes:
+'     Dashboard type GAB Script that allows the user to see select Open Jobs
+'     From the GAB script you are able to add notes to the individual work orders.
+'     User in EDITWO group will be able to Open/Edit the WO
+
+
+
+'Set Program Version Number
+V.Global.sVersion.Set("110")
+
+'Set Form as NOT Visible/Enabled until Ready
+Gui.F_Main..Enabled(False)
+Gui.F_Main..Visible(False)
+Gui.F_Main..Position(0,0)
+
+Gui.F_Main.cboPrtRel.AddItem("Printed",0)
+Gui.F_Main.cboPrtRel.AddItem("Released",1)
+Gui.F_Main.cboPrtRel.AddItem("Print/Rel",2)
+Gui.F_Main.cboPrtRel.AddItem("No Print/No Rel",3)
+
+'Check if the User is in EDITWO Group, to enable Edit options
+F.Global.Security.IsInGroup(V.Caller.User,"EDITWO",V.Global.bOptEdit)
+
+'Static Screen Setup
+'****************************************************
+
+Gui.F_Main.optView.Value("True")
+
+'Refresh Button Setup
+Gui.F_Main.cmdRefresh.FontSize(18)
+
+'Filter Button Setup
+Gui.F_Main.cmdFilter.FontSize(10)
+
+'lblLoadMsg Setup
+Gui.F_Main.lblLoadMsg.FontSize(14)
+Gui.F_Main.lblLoadMsg.Alignment(2)
+Gui.F_Main.lblLoadMsg.FontName("Arial Black")
+Gui.F_Main.lblLoadMsg.ForeColor(V.Color.Blue)
+Gui.F_Main.lblLoadMsg.Caption("If you want this scrtip to Load your Data Automatically upon Start, please check the 'Auto Load Data on Next Script Start' option below.  Otherwise, click the 'View/Refresh' button below to load your Data now.")
+
+
+'Progress Bar Reset
+Gui.F_Main.prgLoad.Value(0)
+Gui.F_Main.prgLoad.Visible(False)
+
+F.Intrinsic.Control.CallSub(Sub_checktables)
+
+
+'****************************************************
+
+F.Intrinsic.Control.CallSub("subScreen_Refresh")
+
+F.Intrinsic.Control.If(V.Screen.F_Main!optEdit.Value,=,True)
+	F.Intrinsic.Control.CallSub(Optedit_click)
+F.Intrinsic.Control.EndIf
+
+'Make the Form Visible
+Gui.F_Main..Enabled(True)
+Gui.F_Main..Visible(True)
+
+Program.Sub.Main.End
+
+Program.Sub.E_F_Main_Resize.Start
+F.Intrinsic.Control.SetErrorHandler("E_F_Main_Resize_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Sub used for Resizing/Moving Objects on the Form
+'There is a Minimum/Maximum size of Form which it will not go beyond
+
+'Declare Variables for Moving/Sizing Objects on Form
+V.Local.iWTemp.Declare(Long,0)
+V.Local.iHTemp.Declare(Long,0)
+V.Local.iXTemp.Declare(Long,0)
+V.Local.iX2Temp.Declare(Long,0)
+V.Local.iYTemp.Declare(Long,0)
+V.Local.iY2Temp.Declare(Long,0)
+
+'Allow Horizontal Screen Size to Go Larger than 19710... but Not Less
+Function.Intrinsic.Control.If(Variable.Screen.F_Main.Width,<,19400)
+	Gui.F_Main..Size(19400,Variable.Screen.F_Main.Height)
+Function.Intrinsic.Control.EndIf
+
+'Allow Vertical Screen Size to Go Larger than 10605... but Not Less
+Function.Intrinsic.Control.If(Variable.Screen.F_Main.Height,<,10605)
+	Gui.F_Main..Size(Variable.Screen.F_Main.Width,10605)
+Function.Intrinsic.Control.EndIf
+
+'Resize fgOpenJobs (It Does Not Move)
+F.Intrinsic.Math.sub(V.Screen.F_Main.Width,300,V.Local.iWTemp)
+F.Intrinsic.Math.sub(V.Screen.F_Main.Height,2350,V.Local.iHTemp)
+Gui.F_Main.fgOpenJobs.Size(V.Local.iWTemp,V.Local.iHTemp)
+
+'Resize prgLoad (Progress Bar) The Width and Y Postition Changes, Not the Height or X Position
+F.Intrinsic.Math.sub(V.Screen.F_Main.Width,1600,V.Local.iWTemp)
+Gui.F_Main.prgLoad.Position(750,3000)
+Gui.F_Main.prgLoad.Size(V.Local.iWTemp,800)
+
+'The lblLoadMsg (Static Position)
+F.Intrinsic.Math.Div(V.Screen.F_Main.Width,2,V.Local.iXTemp)
+F.Intrinsic.Math.Div(V.Screen.F_Main!lblLoadMsg.Width,2,V.Local.iX2Temp)
+F.Intrinsic.Math.Sub(V.Local.iXTemp,V.Local.iX2Temp,V.Local.iXTemp)
+'F.Intrinsic.Math.Sub(V.Screen.F_Main.Height,7000,V.local.iYTemp)
+Gui.F_Main.lblLoadMsg.position(V.Local.iXTemp,2000)
+
+'Move LowerHalf (It Does Not Resize) Keep it Center
+F.Intrinsic.Math.Div(V.Screen.F_Main.Width,2,V.Local.iXTemp)
+F.Intrinsic.Math.Div(V.Screen.F_Main!frmLowerHalf.Width,2,V.Local.iX2Temp)
+F.Intrinsic.Math.Sub(V.Local.iXTemp,V.Local.iX2Temp,V.Local.iXTemp)
+F.Intrinsic.Math.Sub(V.Screen.F_Main.Height,2340,V.local.iYTemp)
+Gui.F_Main.frmLowerHalf.position(V.Local.iXTemp,V.Local.iYTemp)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_F_Main_Resize_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_F_Main_Resize.End
+
+Program.Sub.subExit.Start
+'The Exit Sub
+
+F.Intrinsic.Control.End
+
+Program.Sub.subExit.End
+
+Program.Sub.subBuildStyles_fgOpenJobs.Start
+F.Intrinsic.Control.SetErrorHandler("subBuildStyles_fgOpenJobs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Define Build Styles for Flex Grid fgOpenJobs
+
+'Define Number of Columns and Fixed Columns in Flex Grid
+'Fixed Column for Row Number
+Gui.F_Main.fgOpenJobs.Cols(17)
+Gui.F_Main.fgOpenJobs.FixedCols(1)
+
+'Temp Set Row Count to 2 (So that Column Header can be Defined)
+'If No Data is Found Latter... Rows will Remain at 1 for the Fixed Header
+Gui.F_Main.fgOpenJobs.Rows(2)
+Gui.F_Main.fgOpenJobs.FixedRows(1)
+
+'--------------------------CREATE BUILD STYLES FOR FLEX GRID (USED FOR EITHER PART OF THE IF STATEMENT)----------------------------
+
+'Row Number Column (Dynamic)
+Gui.F_Main.fgOpenJobs.TextMatrix(0,0,"")
+Gui.F_Main.fgOpenJobs.ColWidth(0,400)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,0,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,0,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,0,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,0,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,0,"Format","alignment",4)
+
+'Print
+Gui.F_Main.fgOpenJobs.TextMatrix(1,0,"Printed")
+Gui.F_Main.fgOpenJobs.ColWidth(1,600)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,1,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,1,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,1,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,1,"Type","Checkbox",0)
+F.Intrinsic.Control.If(V.Screen.F_Main!optView.Value,=,True)
+	Gui.F_Main.fgOpenJobs.BuildStyle(2,1,"type","locked",True)
+F.Intrinsic.Control.Else
+	Gui.F_Main.fgOpenJobs.BuildStyle(2,1,"type","locked",False)
+F.Intrinsic.Control.EndIf
+
+'Released
+Gui.F_Main.fgOpenJobs.TextMatrix(2,0,"Released")
+Gui.F_Main.fgOpenJobs.ColWidth(2,750)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,2,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,2,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,2,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,2,"Type","Checkbox",0)
+F.Intrinsic.Control.If(V.Screen.F_Main!optView.Value,=,True)
+	Gui.F_Main.fgOpenJobs.BuildStyle(2,2,"type","locked",True)
+F.Intrinsic.Control.Else
+	Gui.F_Main.fgOpenJobs.BuildStyle(2,2,"type","locked",False)
+F.Intrinsic.Control.EndIf
+
+'Release Date
+Gui.F_Main.fgOpenJobs.TextMatrix(3,0,"Rel Date")
+Gui.F_Main.fgOpenJobs.ColWidth(3,950)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,3,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,3,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,3,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,3,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,3,"Format","alignment",4)
+'Gui.F_Main.fgOpenJobs.BuildStyle(2,3,"Format","Mask","mm/dd/yyyy")
+
+'Job Number (Linked)
+Gui.F_Main.fgOpenJobs.TextMatrix(4,0,"Job")
+Gui.F_Main.fgOpenJobs.ColWidth(4,700)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,4,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,4,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,4,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,4,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,4,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,4,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,4,"Color","Fore",16711680)
+
+'Job Suffix (Linked)
+Gui.F_Main.fgOpenJobs.TextMatrix(5,0,"Suf.")
+Gui.F_Main.fgOpenJobs.ColWidth(5,400)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,5,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,5,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,5,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,5,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,5,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,5,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,5,"Color","Fore",16711680)
+
+'Customer Name
+Gui.F_Main.fgOpenJobs.TextMatrix(6,0,"Cust Name")
+Gui.F_Main.fgOpenJobs.ColWidth(6,2000)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,6,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,6,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,6,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,6,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,6,"Format","alignment",1)
+
+'Part (Linked to Supply and Demand)
+Gui.F_Main.fgOpenJobs.TextMatrix(7,0,"Part")
+Gui.F_Main.fgOpenJobs.ColWidth(7,1950)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,7,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,7,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,7,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,7,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,7,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,7,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,7,"Color","Fore",16711680)
+
+'Part Location
+Gui.F_Main.fgOpenJobs.TextMatrix(8,0,"Loc")
+Gui.F_Main.fgOpenJobs.ColWidth(8,400)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,8,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,8,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,8,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,8,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,8,"Format","alignment",4)
+
+'Product Line
+Gui.F_Main.fgOpenJobs.TextMatrix(9,0,"PL")
+Gui.F_Main.fgOpenJobs.ColWidth(9,400)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,9,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,9,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,9,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,9,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,9,"Format","alignment",4)
+
+'Description
+Gui.F_Main.fgOpenJobs.TextMatrix(10,0,"Description")
+Gui.F_Main.fgOpenJobs.ColWidth(10,2200)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,10,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,10,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,10,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,10,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,10,"Format","alignment",1)
+
+'WO Due Date
+Gui.F_Main.fgOpenJobs.TextMatrix(11,0,"WO Due Dt")
+Gui.F_Main.fgOpenJobs.ColWidth(11,1060)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,11,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,11,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,11,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,11,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,11,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,11,"Format","Mask","mm/dd/yyyy")
+
+'Scheduled Due Date
+Gui.F_Main.fgOpenJobs.TextMatrix(12,0,"Sched Due Dt")
+Gui.F_Main.fgOpenJobs.ColWidth(12,1060)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,12,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,12,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,12,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,12,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,12,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,12,"Format","Mask","mm/dd/yyyy")
+
+'WO Start Date
+Gui.F_Main.fgOpenJobs.TextMatrix(13,0,"WO Start Dt")
+Gui.F_Main.fgOpenJobs.ColWidth(13,1060)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,13,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,13,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,13,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,13,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,13,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,13,"Format","Mask","mm/dd/yyyy")
+
+'Actual Hours
+Gui.F_Main.fgOpenJobs.TextMatrix(14,0,"Act. Hrs.")
+Gui.F_Main.fgOpenJobs.ColWidth(14,900)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,14,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,14,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,14,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,14,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,14,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,14,"Format","Mask","#######.00")
+
+'Qty Rem
+Gui.F_Main.fgOpenJobs.TextMatrix(15,0,"Qty Rem")
+Gui.F_Main.fgOpenJobs.ColWidth(15,900)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,15,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,15,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,15,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,15,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,15,"Format","alignment",4)
+
+'Notes (Work Order Header User_2 Field)
+Gui.F_Main.fgOpenJobs.TextMatrix(16,0,"Work Order Note (70 Characters)")
+Gui.F_Main.fgOpenJobs.ColWidth(16,3000)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,16,"type","locked",True)
+'Gui.F_Main.fgOpenJobs.BuildStyle(1,16,"fontstyle","bold",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,16,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(1,16,"Color","Back",V.Color.Pink)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,16,"type","locked",False)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,16,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(2,16,"Color","Back",9961297)
+
+'Cell selection moves Down after hitting enter...
+Gui.F_Main.fgOpenJobs.SetProperty("Enter",0)
+Gui.F_Main.fgOpenJobs.ApplyStyle(0,1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subBuildStyles_fgOpenJobs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subBuildStyles_fgOpenJobs.End
+
+Program.Sub.subGenerate_Sql.Start
+F.Intrinsic.Control.SetErrorHandler("subGenerate_Sql_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Define SQL Statements for Pulling Data from Global Shop
+
+'Define Local Variables
+V.Local.iCount.Declare(Long)
+
+'SELECT
+V.Global.sSqlJobHeader.Set("SELECT JOB, SUFFIX, PART, DESCRIPTION, LOCATION, PRODUCT_LINE, DATE_DUE, DATE_START,FLAG_WO_PRTD, NAME_CUSTOMER AS CUST_NAME, NUM_HOURS,(VJH.QTY_ORDER-VJH.QTY_COMPLETED) AS QTY_LEFT, VJH.SCHEDULED_DUE_DATE, VWUF.USER_6 AS 'WO_NOTE' ")
+V.Global.sSQLRELDATE.Set("SELECT JOB,SUFFIX,REL_DATE FROM GAB_4047_WOD")
+
+'FROM
+F.Intrinsic.String.Concat(V.Global.sSqlJobHeader," FROM (V_JOB_HEADER VJH LEFT JOIN V_CUSTOMER_MASTER VCM ON VJH.CUSTOMER=VCM.CUSTOMER) LEFT JOIN V_WO_USER_FLDS VWUF ON VJH.JOB = VWUF.JOB AND VJH.SUFFIX = VWUF.SUFFIX ",V.Global.sSqlJobHeader)
+
+'WHERE
+F.Intrinsic.String.Concat(V.Global.sSqlJobHeader," WHERE DATE_CLOSED='1900-1-1'",V.Global.sSqlJobHeader)
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subGenerate_Sql_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subGenerate_Sql.End
+
+Program.Sub.E_cmdExportExcel_Click.Start
+F.Intrinsic.Control.SetErrorHandler("E_cmdExportExcel_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgOpenJobs","iExportType",1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_cmdExportExcel_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_cmdExportExcel_Click.End
+
+Program.Sub.E_cmdExportOO_Click.Start
+F.Intrinsic.Control.SetErrorHandler("E_cmdExportOO_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgOpenJobs","iExportType",0)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_cmdExportOO_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_cmdExportOO_Click.End
+
+Program.Sub.subExport_fgOpenJobs.Start
+F.Intrinsic.Control.SetErrorHandler("subExport_fgOpenJobs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+'Load Passed iExportType Variable
+V.Local.iExportType.Set(V.Args.iExportType)
+
+'Check to see if Data is available to Export
+F.Intrinsic.Control.If(V.Global.iRowCount,=<,0)
+	'No Data to Export... Stop
+	F.Intrinsic.UI.Msgbox("Nothing To Export","Nothing To Export")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Display the Save Dialog
+F.Intrinsic.UI.ShowSaveFileDialog("","xls|*.xls",,V.Local.sFPath)
+
+'If User did not hit the Cancel button on the Save File Dialog, then Attempt to Export/Save the File
+F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+	'Path NOT Blank (User did Not Cancel the Save)
+	
+	'Disable Flex Grid During Save
+	'Lock the GUI During Save
+	Gui.F_Main..Enabled(False)
+	Gui.F_Main.fgOpenJobs.Visible(False)
+
+	'Try To Save the File
+	Gui.F_Main.lblLoadMsg.Caption("Saving....  This may take up to a minute depending on the amount of Data in the grid.  Please be patient...")
+	Gui.F_Main.lblLoadMsg.Visible(true)
+	Gui.F_Main.fgOpenJobs.Export(V.Local.sFPath,V.Local.iExportType)
+	Gui.F_Main.lblLoadMsg.Visible(False)
+	
+	'File Saved Successfully
+	'Create Message to Display
+	'Ask user if they want to Open the File NOW?
+	F.Intrinsic.String.Concat("The data was exported successfully to:",V.Ambient.NewLine,V.local.sFPath,V.ambient.newline,V.ambient.newline,"Do you want to open this file Now?",V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage,"File Saved Successfully",4,V.Local.iResponse)
+
+	'Responses
+	'6 = YES
+	'7 = NO
+
+	F.Intrinsic.Control.If(V.Local.iResponse,=,6)
+		'User Said YES
+		'Try to Open the File
+		F.Intrinsic.Task.ShellExec(V.Local.iHandle,"open",V.Local.sFPath,,,0)
+	F.Intrinsic.Control.EndIf
+	
+	'Re-Enable the Flex Grid after Save
+	'UnLock the GUI After Save
+	Gui.F_Main..Enabled(True)
+	Gui.F_Main.fgOpenJobs.Visible(True)
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subExport_fgOpenJobs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgOpenJobs.End
+
+Program.Sub.E_cmdRefresh_Click.Start
+F.Intrinsic.Control.SetErrorHandler("E_cmdRefresh_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Refresh Button Clicked
+
+'Call the Screen Refresh Sub
+F.Intrinsic.control.CallSub("subScreen_Refresh")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_cmdRefresh_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_cmdRefresh_Click.End
+
+Program.Sub.subScreen_Refresh.Start
+F.Intrinsic.Control.SetErrorHandler("subScreen_Refresh_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.bEditGrp.Declare(Boolean)
+
+'Check if the User is in EDIT Group, to enable the Edit button to edit SO
+F.Global.Security.IsInGroup(V.Caller.User,"EDITWO",V.Local.bEditGrp)
+F.Intrinsic.Control.If(V.Local.bEditGrp,=,"False")
+	Gui.F_Main.optEdit.Enabled(0)
+F.Intrinsic.Control.Else
+	Gui.F_Main.optEdit.Enabled(1)
+F.Intrinsic.Control.EndIf
+
+'Sub Used to Refresh the Screen (the Grid)
+
+'Disbale lblLoadMsg
+Gui.F_Main.lblLoadMsg.Visible(False)
+
+'Disable the Flex Grid while loading...
+Gui.F_Main.fgOpenJobs.Enabled(False)
+Gui.F_Main.fgOpenJobs.Visible(False)
+
+'Disable the GUI
+Gui.F_Main..Enabled(False)
+
+'Reset Progress Load Bar
+Gui.F_Main.prgLoad.Value(1)
+Gui.F_Main.prgLoad.Visible(True)
+
+'Clear Refresh Msg while Loading
+Gui.F_Main..Caption(V.Global.sHeader)
+
+'Make GUI Visible (if its not Already)
+Gui.F_Main..Visible(True)
+
+'Generate SQL Statements for Pulling Data (Based on Current Settings Selected on the Form)
+F.Intrinsic.Control.CallSub("subGenerate_Sql")
+
+'Load BuildStyles for fgOpenJobs Flex Grid
+F.Intrinsic.Control.CallSub("subBuildStyles_fgOpenJobs")
+
+'Load Data into fgOpenJobs Flex Grid
+F.Intrinsic.Control.CallSub("subLoad_fgOpenJobs")
+
+'Uncheck Filters
+Gui.F_Main.chkPrtRel.Value(0)
+Gui.F_Main.chkLoc.Value(0)
+Gui.F_Main.chkPL.Value(0)
+
+'Re-Enable Flex Grid and GUI
+Gui.F_Main.prgLoad.Visible(False)
+Gui.F_Main.fgOpenJobs.Visible(True)
+Gui.F_Main.fgOpenJobs.Enabled(True)
+Gui.F_Main..Enabled(True)
+
+'Set Focus on cmdView button after Initial Load
+Gui.F_Main.cmdRefresh.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subScreen_Refresh_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subScreen_Refresh.End
+
+Program.Sub.subGenerate_RowNumbers.Start
+F.Intrinsic.Control.SetErrorHandler("subGenerate_RowNumbers_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Declare Local Variable
+V.Local.iCount.Declare(Long)
+V.Local.iRow.Declare(Long)
+
+F.Intrinsic.Control.for(V.Local.iCount,0,V.uGlobal.uData.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iCount,1,V.Local.iRow)
+	V.uGlobal.uData(v.Local.iCount)!Row.Set(V.Local.iRow)
+	V.Global.iRowCount.Set(V.Local.iRow)
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subGenerate_RowNumbers_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subGenerate_RowNumbers.End
+
+Program.Sub.subLoad_fgOpenJobs.Start
+F.Intrinsic.Control.SetErrorHandler("subLoad_fgOpenJobs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Load Data into Flex Grid fg_OpenJobs
+
+'Declare Local Variables
+V.Global.iRowCount.Set(0)
+
+'Create/Open Connection
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Load UDTs
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstJobHead",V.Global.sSqlJobHeader)
+F.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstJobHead","uglobal.uJobH",False,100000)
+F.ODBC.Conx!rstJobHead.Close
+
+
+F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstRelDate",V.Global.sSQLRELDATE)
+F.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstRelDate","uglobal.uRelDate",False,100000)
+F.ODBC.Conx!rstRelDate.Close
+
+
+'Close the Connection
+F.ODBC.Connection!Conx.Close
+
+F.Intrinsic.Control.CallSub(Subload_grid)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoad_fgOpenJobs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoad_fgOpenJobs.End
+
+Program.Sub.E_fgOpenJobs_MouseUp.Start
+F.Intrinsic.Control.SetErrorHandler("E_fgOpenJobs_MouseUp_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'MouseUp on fgOpenJobs Flex Grid
+
+'Sort by Column when Header Row is clicked
+'Activate Link when Clicked
+
+'Declare Local Variables (Used for String Comparison)
+V.Local.sTemp.Declare(String)
+V.Local.sTemp.Set("")
+V.Local.sTemp2.Declare(String)
+V.Local.sTemp2.Set("")
+V.Local.iRelStatus.Declare(Long)
+V.Local.iPrtStatus.Declare(Long)
+
+'COLUMN SORTING
+
+F.Intrinsic.Control.If(V.Args.mouserow,=,0)
+	F.Intrinsic.Control.If(V.Args.mousecol,<>,0)
+		F.Intrinsic.Control.CallSub(Subsort,"col",V.Args.mousecol)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+''LINK CONTROL
+F.Intrinsic.Control.If(V.Args.MouseRow,>,0)
+	'JOB/SUFFIX Clicked...
+	F.Intrinsic.Control.If(V.Args.MouseCol,>,3)
+	F.Intrinsic.Control.AndIf(V.Args.mousecol,<,6)
+		'Get Job
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(4,V.Args.mouserow,V.Local.sTemp)
+		'Get Suffix
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(5,V.Args.mouserow,V.Local.sTemp2)
+		F.Intrinsic.Control.If(V.Screen.F_Main!optEdit.Value,=,"True")
+			'Build Call Wrapper String
+			F.Intrinsic.String.Concat(V.Local.sTemp,"!*!",V.Local.sTemp2,"!*!","O",V.Local.sTemp)
+			F.Global.General.CallWrapperASync(2007,V.Local.sTemp)
+		F.Intrinsic.Control.Else
+			'Build Call Wrapper String
+			F.Intrinsic.String.Concat("7","!*!",V.Local.sTemp,"!*!",V.Local.sTemp2,"!*!","A",V.Local.sTemp)
+			F.Global.General.CallWrapperASync(450000,V.Local.sTemp)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Part Number
+	F.Intrinsic.Control.If(V.Args.MouseCol,>,6)
+	F.Intrinsic.Control.AndIf(V.Args.mousecol,<,9)
+		'Get Part Number
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(7,V.Args.mouserow,V.Local.sTemp)
+		'Get Part Loc
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(8,V.Args.mouserow,V.Local.sTemp2)
+		F.Global.Inventory.CallSD(V.Local.sTemp,"",V.Local.sTemp2)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_fgOpenJobs_MouseUp_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_fgOpenJobs_MouseUp.End
+
+Program.Sub.E_fgOpenJobs_CellEnter.Start
+F.Intrinsic.Control.SetErrorHandler("E_fgOpenJobs_CellEnter_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Cell Enter on fgSales Flex Grid
+
+'Store Information on Cell being Entered for Future Comparison
+V.global.iOldRow.Set(V.Screen.F_Main!fgOpenJobs.Row)
+Gui.F_Main.fgOpenJobs.GetTextMatrix(V.Screen.F_Main!fgOpenJobs.Col,V.Global.iOldRow,V.Global.sOldValue)
+F.Intrinsic.String.Len(V.Global.sOldValue,V.Global.iOldLength)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("E_fgOpenJobs_CellEnter_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.E_fgOpenJobs_CellEnter.End
+
+program.sub.fgopenjobs_posttextmatrix.start
+F.Intrinsic.Control.SetErrorHandler("fgopenjobs_posttextmatrix_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Post Text Matrix on fgSales Flex Grid
+
+'Declare Local Variables
+V.Local.iCurrentRow.declare(Long)
+V.Local.iCurrentLength.Declare(Long)
+V.Local.bSubMatch.Declare(Boolean)
+V.Local.sSqlUpdate.Declare(String)
+V.Local.sUpdateText.Declare(String)
+V.Local.sUpdateText.Set("")
+V.Local.iRow.Declare(Long)
+V.Local.iRow.Set(0)
+V.Local.sJobNo.Declare(String)
+V.Local.sJobNo.Set("")
+V.Local.sJobSuffix.Declare(String)
+V.Local.sJobSuffix.Set("")
+V.Local.iTestRowCount.Declare(Long)
+V.Local.iTestRowCount.Set(0)
+
+'Populate Variables
+V.Local.iRow.Set(V.Screen.F_Main!fgOpenJobs.Row)
+Gui.F_Main.fgOpenJobs.GetTextMatrix(16,V.Local.iRow,V.Local.sUpdateText)
+F.Intrinsic.String.Trim(V.Local.sUpdateText,V.Local.sUpdateText)
+Gui.F_Main.fgOpenJobs.GetTextMatrix(4,V.Local.iRow,V.Local.sJobNo)
+Gui.F_Main.fgOpenJobs.GetTextMatrix(5,V.Local.iRow,V.Local.sJobSuffix)
+
+'Generate Lookup SQL Statement
+V.Local.sSqlUpdate.Set("SELECT * FROM WO_USER_FLDS WHERE JOB = '")
+F.Intrinsic.String.Concat(V.Local.sSqlUpdate,V.Local.sJobNo,"' AND SUFFIX = '",V.Local.sJobSuffix,"';",V.Local.sSqlUpdate)
+
+'Test to See if Record Already Exists (Update vs. Insert)
+'Create/Open Connection
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Execute Lookup Statement
+F.ODBC.Connection!Conx.OpenRecordsetRO("rstTest",V.Local.sSqlUpdate)
+'Loop through the rstTest recordset and count the rows (should be 1 or 0)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstTest.EOF,=,True)
+	'Add up the Rows
+	F.Intrinsic.Math.Add(V.Global.iRowCount,1,V.Local.iTestRowCount)
+	F.ODBC.conx!rstTest.MoveNext
+F.Intrinsic.Control.Loop
+
+'Close the Record Set
+F.ODBC.conx!rstTest.Close
+
+F.Intrinsic.Control.If(V.Local.sUpdateText,<>,V.Global.sOldValue)
+	'Test For Update/Insert
+	F.Intrinsic.Control.If(V.Local.iTestRowCount,>,0)
+		'Record Found... Update... NOT Insert
+		'Generate Update SQL Statement
+		F.Intrinsic.Control.If(V.Screen.F_Main!fgOpenJobs.Col,=,16)
+
+			'Update Work Order Notes (User_6 Field)
+			V.Local.sSqlUpdate.Set("UPDATE WO_USER_FLDS SET User_6 = '")
+			F.Intrinsic.String.Concat(V.Local.sSqlUpdate,V.Local.sUpdateText,"' WHERE JOB = '",V.Local.sJobNo,"' AND SUFFIX = '",V.Local.sJobSuffix,"';",V.Local.sSqlUpdate)
+		F.Intrinsic.Control.EndIf
+
+		'Execute Update Statement
+		F.ODBC.connection!Conx.Execute(V.Local.sSqlUpdate)
+		
+		'If No Errors
+		F.Intrinsic.UI.Msgbox("Change Updated Successfully","Success")
+
+	F.Intrinsic.Control.Else
+		'No Record Found... Insert... NOT Update
+		'Generate Insert SQL Statement
+
+	'
+		F.Intrinsic.Control.If(V.Screen.F_Main!fgOpenJobs.Col,=,16)
+
+			'Insert Work Order Notes (User_6 Field)
+			V.Local.sSqlUpdate.Set("INSERT INTO WO_USER_FLDS (JOB, SUFFIX, USER_6) VALUES ('")
+			F.Intrinsic.String.Concat(V.Local.sSqlUpdate,V.Local.sJobNo,"', '",V.Local.sJobSuffix,"', '",V.Local.sUpdateText,"');",V.Local.sSqlUpdate)
+		F.Intrinsic.Control.EndIf
+
+		'Execute Update Statement
+		F.ODBC.connection!Conx.Execute(V.Local.sSqlUpdate)
+
+		'If No Errors
+		F.Intrinsic.UI.Msgbox("Change Saved Successfully","Success")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+'Close the Connection
+F.ODBC.Connection!Conx.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgopenjobs_posttextmatrix_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.fgopenjobs_posttextmatrix.end
+
+Program.Sub.subLoad_Grid.Start
+F.Intrinsic.Control.SetErrorHandler("subLoad_Grid_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iCount.Declare(Long)
+V.Local.iC.Declare(Long,-1)
+V.Local.sLine.Declare(String)
+V.Local.fEstH.Declare(Float)
+V.Local.sGrade.Declare(String)
+V.Local.sSeek.Declare(String)
+V.Global.iProgBarVal.Set(0)
+V.Global.iProgBarTotalVal.Set(V.uGlobal.uJobH.UBound)
+F.Intrinsic.Math.Div(V.Global.iProgBarTotalVal,100,V.Global.iProgBarTotalVal)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uRelDate.UBound,1)
+	F.Intrinsic.Control.If(V.uGlobal.uRelDate(V.Local.iCount)!REL_DATE,=,"1/1/1900")
+		V.uGlobal.uRelDate(V.Local.iCount)!REL_DATE.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+F.Intrinsic.Control.If(V.Global.iProgBarTotalVal,=,0)
+	V.Global.iProgBarTotalVal.Set(1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uJobH.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iC)
+	V.uGlobal.uGrid.RedimPreserve(0,V.Local.iC)
+	F.Intrinsic.Control.If(V.uGlobal.uJobH(V.Local.iCount)!FLAG_WO_PRTD,=,"")
+		V.uGlobal.uGrid(V.Local.iCount)!Print.Set(0)
+		V.uGlobal.uGrid(V.Local.iCount)!Released.Set(0)
+	F.Intrinsic.Control.ElseIf(V.uGlobal.uJobH(V.Local.iCount)!FLAG_WO_PRTD,=,"N")
+		V.uGlobal.uGrid(V.Local.iCount)!Print.Set(0)
+		V.uGlobal.uGrid(V.Local.iCount)!Released.Set(0)
+	F.Intrinsic.Control.ElseIf(V.uGlobal.uJobH(V.Local.iCount)!FLAG_WO_PRTD,=,"R")
+		V.uGlobal.uGrid(V.Local.iCount)!Print.Set(1)
+		V.uGlobal.uGrid(V.Local.iCount)!Released.Set(1)
+	F.Intrinsic.Control.ElseIf(V.uGlobal.uJobH(V.Local.iCount)!FLAG_WO_PRTD,=,"X")
+		V.uGlobal.uGrid(V.Local.iCount)!Print.Set(0)
+		V.uGlobal.uGrid(V.Local.iCount)!Released.Set(1)
+	F.Intrinsic.Control.ElseIf(V.uGlobal.uJobH(V.Local.iCount)!FLAG_WO_PRTD,=,"Y")
+		V.uGlobal.uGrid(V.Local.iCount)!Print.Set(1)
+		V.uGlobal.uGrid(V.Local.iCount)!Released.Set(0)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uRelDate!JOB,V.uGlobal.uJobH(V.Local.iCount)!JOB,V.uGlobal.uRelDate!SUFFIX,V.uGlobal.uJobH(V.Local.iCount)!SUFFIX,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+		V.uGlobal.uGrid(V.Local.iCount)!Rel_Date.Set(V.uGlobal.uRelDate(V.Local.sLine(0))!REL_DATE)
+	F.Intrinsic.Control.EndIf
+	V.uGlobal.uGrid(V.Local.iCount)!Job.Set(V.uGlobal.uJobH(V.Local.iCount)!JOB)
+	V.uGlobal.uGrid(V.Local.iCount)!Suffix.Set(V.uGlobal.uJobH(V.Local.iCount)!SUFFIX)
+	V.uGlobal.uGrid(V.Local.iCount)!Cust_Name.Set(V.uGlobal.uJobH(V.Local.iCount)!CUST_NAME)
+	V.uGlobal.uGrid(V.Local.iCount)!Part.Set(V.uGlobal.uJobH(V.Local.iCount)!PART)
+	V.uGlobal.uGrid(V.Local.iCount)!Loc.Set(V.uGlobal.uJobH(V.Local.iCount)!LOCATION)
+	V.uGlobal.uGrid(V.Local.iCount)!PL.Set(V.uGlobal.uJobH(V.Local.iCount)!PL)
+	V.uGlobal.uGrid(V.Local.iCount)!Description.Set(V.uGlobal.uJobH(V.Local.iCount)!DESCRIPTION)
+	V.uGlobal.uGrid(V.Local.iCount)!Date_Due.Set(V.uGlobal.uJobH(V.Local.iCount)!DATE_DUE)
+	V.uGlobal.uGrid(V.Local.iCount)!Date_Sched_Due.Set(V.uGlobal.uJobH(V.Local.iCount)!SCHEDULED_DUE_DATE)
+	V.uGlobal.uGrid(V.Local.iCount)!Date_Start.Set(V.uGlobal.uJobH(V.Local.iCount)!DATE_START)
+	V.uGlobal.uGrid(V.Local.iCount)!Act_hours.Set(V.uGlobal.uJobH(V.Local.iCount)!NUM_HOURS)
+	V.uGlobal.uGrid(V.Local.iCount)!Qty_Left.Set(V.uGlobal.uJobH(V.Local.iCount)!QTY_LEFT)
+
+	V.uGlobal.uGrid(V.Local.iCount)!Notes.Set(V.uGlobal.uJobH(V.Local.iCount)!WO_NOTE)
+	F.Intrinsic.Control.If(V.Global.fProgBarValue,<,100)
+		F.Intrinsic.Math.Add(V.Global.iProgBarVal,1,V.Global.iProgBarVal)
+		F.Intrinsic.Math.Div(V.Global.iProgBarVal,V.Global.iProgBarTotalVal,V.Global.fProgBarValue)
+		Gui.F_Main.prgLoad.Value(V.Global.fProgBarValue)
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uGrid,V.uGlobal.uData,False)
+
+
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Due,0,V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+
+F.Intrinsic.Control.CallSub(Subgenerate_rownumbers)
+
+Gui.F_Main.fgOpenJobs.LoadFromUDT("V.uGlobal.uData","Row::0*!*Print::1*!*Released::2*!*Rel_Date::3*!*Job::4*!*Suffix::5*!*Cust_Name::6*!*Part::7*!*Loc::8*!*PL::9*!*Description::10*!*Date_Due::11*!*Date_Sched_Due::12*!*Date_Start::13*!*Act_hours::14*!*Qty_Left::15*!*Notes::16",2)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoad_Grid_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoad_Grid.End
+
+program.sub.cmdfilter_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdfilter_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Sub Used to Refresh the Screen (the Grid)
+'Sub called when View/Refresh is Clicked...
+'Clear the Screen/Variables and Walk through the Load Process
+
+V.Local.iC.Declare(Long)
+
+'Disbale lblLoadMsg
+Gui.F_Main.lblLoadMsg.Visible(False)
+
+'Disable the Flex Grid while loading...
+Gui.F_Main.fgOpenJobs.Enabled(False)
+Gui.F_Main.fgOpenJobs.Visible(False)
+
+'Disable the GUI
+Gui.F_Main..Enabled(False)
+
+'Reset Progress Load Bar
+Gui.F_Main.prgLoad.Value(1)
+Gui.F_Main.prgLoad.Visible(True)
+
+'Clear Refresh Msg while Loading
+Gui.F_Main..Caption(V.Global.sHeader)
+
+'Make GUI Visible (if its not Already)
+Gui.F_Main..Visible(True)
+
+'Generate SQL Statements for Pulling Data (Based on Current Settings Selected on the Form)
+F.Intrinsic.Control.CallSub("subGenerate_Sql")
+
+'%%%% UPDATE PROGRESS BAR %%%%
+V.Global.fProgBarValue.Set(10)
+Gui.F_Main.prgLoad.Value(V.Global.fProgBarValue)
+'%%%% UPDATE PROGRESS BAR %%%%
+
+'Make a copy of the UDT
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uGrid,V.uGlobal.uData,False)
+
+'Apply filters
+
+F.Intrinsic.Control.If(V.Screen.F_Main!chkLoc.Value,=,1)
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+	F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!Loc,V.Screen.F_Main!txtLoc.Text)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Main!chkPrtRel.Value,=,1)
+	F.Intrinsic.Control.If(V.Screen.F_Main!cboPrtRel.Text,=,"Printed")
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!Print,"1")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Screen.F_Main!cboPrtRel.Text,=,"Released")
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!Released,"1")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Screen.F_Main!cboPrtRel.Text,=,"Print/Rel")
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!Print,"1",V.uGlobal.uData!Released,"1")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Screen.F_Main!cboPrtRel.Text,=,"No Print/No Rel")
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!Print,"0",V.uGlobal.uData!Released,"0")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Main!chkWODue.Value,=,1)
+	F.Intrinsic.Variable.UDTUnFlagAll(V.uGlobal.uData)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.uGlobal.uData.UBound,1)
+		F.Intrinsic.Control.If(V.Screen.F_Main!dtpDueDate.Value,<,V.uGlobal.uData(V.Local.iC)!Date_Due)
+			F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uData!Date_Due,V.uGlobal.uData(V.Local.iC)!Date_Due)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Main!chkPL.Value,=,1)
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uData)
+	F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uData!PL,V.Screen.F_Main!txtPL.Text)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uData)
+F.Intrinsic.Control.EndIf
+
+'%%%% UPDATE PROGRESS BAR %%%%
+V.Global.fProgBarValue.Set(40)
+Gui.F_Main.prgLoad.Value(V.Global.fProgBarValue)
+'%%%% UPDATE PROGRESS BAR %%%%
+
+
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Due,0,V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+
+F.Intrinsic.Control.CallSub(Subgenerate_rownumbers)
+
+'%%%% UPDATE PROGRESS BAR %%%%
+V.Global.fProgBarValue.Set(80)
+Gui.F_Main.prgLoad.Value(V.Global.fProgBarValue)
+'%%%% UPDATE PROGRESS BAR %%%%
+
+Gui.F_Main.fgOpenJobs.LoadFromUDT("V.uGlobal.uData","Row::0*!*Print::1*!*Released::2*!*Rel_Date::3*!*Job::4*!*Suffix::5*!*Cust_Name::6*!*Part::7*!*Loc::8*!*PL::9*!*Description::10*!*Date_Due::11*!*Date_Sched_Due::12*!*Date_Start::13*!*Act_hours::14*!*Qty_Left::15*!*Notes::16",2)
+F.Intrinsic.Control.If(V.uGlobal.uData.UBound,=,0)
+	Gui.F_Main.fgOpenJobs.Rows(1)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Main.fgOpenJobs.FixedRows(1)
+Gui.F_Main.fgOpenJobs.ApplyStyle(0,1)
+
+'Update/Display Last Refresh
+V.Local.sTempDateTime.Declare(String,"")
+V.Local.sTempHeader.Declare(String)
+V.Local.sTempHeader.Set(V.Global.sHeader)
+
+'Re-Enable Flex Grid and GUI
+Gui.F_Main.prgLoad.Visible(False)
+Gui.F_Main.fgOpenJobs.Visible(True)
+Gui.F_Main.fgOpenJobs.Enabled(True)
+Gui.F_Main..Enabled(True)
+
+'Set Focus on cmdView button after Initial Load
+Gui.F_Main.cmdRefresh.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdfilter_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdfilter_click.end
+
+program.sub.cmdpl_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpl_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+V.Local.sRet.Declare(String)
+
+Function.Intrinsic.UI.Browser(130,"",Variable.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No PL was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Main.txtPL.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpl_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpl_click.end
+
+program.sub.cmdloc_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdloc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,120)
+F.Intrinsic.String.Split("Location*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1300*!*2300","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.MiniBrowser("Select a Location",conx,"Select Location,Location_desc FROM V_LOCATIONS ORDER BY Location",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Location was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Main.txtLoc.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!Conx.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdloc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdloc_click.end
+
+Program.Sub.subSort.Start
+F.Intrinsic.Control.SetErrorHandler("subSort_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Main.fgOpenJobs.Visible(False)
+
+F.Intrinsic.Control.If(V.Args.col.trim,<>,V.Global.iCol.Trim)
+	V.Global.iCol.Set(V.Args.col.Trim)
+	V.Global.bSort.Set(False)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		V.Global.bSort.Set(True)
+	F.Intrinsic.Control.Else
+		V.Global.bSort.Set(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.SelectCase(V.Args.col)
+
+F.Intrinsic.Control.Case(1)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Print,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Print,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(2)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Released,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Released,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(3)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Rel_Date,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Rel_Date,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(4)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Job,1,V.uGlobal.uData!Suffix,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(5)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Suffix,0,V.uGlobal.uData!Job,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Suffix,1,V.uGlobal.uData!Suffix,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(6)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Cust_Name,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Cust_Name,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(7)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Part,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Part,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(8)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Loc,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Loc,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(9)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!PL,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!PL,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(10)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Description,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Description,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(11)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Due,0,V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Due,1,V.uGlobal.uData!Job,1,V.uGlobal.uData!Suffix,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(12)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Sched_Due,0,V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Sched_Due,1,V.uGlobal.uData!Job,1,V.uGlobal.uData!Suffix,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(13)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Start,0,V.uGlobal.uData!Job,0,V.uGlobal.uData!Suffix,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Date_Start,1,V.uGlobal.uData!Job,1,V.uGlobal.uData!Suffix,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(14)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Act_hours,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Act_hours,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(15)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Qty_Left,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Qty_Left,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(16)
+	F.Intrinsic.Control.If(V.Global.bSort,=,False)
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Notes,0)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uData!Notes,1)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.CallSub(Subgenerate_rownumbers)
+Gui.F_Main.fgOpenJobs.LoadFromUDT("V.uGlobal.uData","Row::0*!*Print::1*!*Released::2*!*Rel_Date::3*!*Job::4*!*Suffix::5*!*Cust_Name::6*!*Part::7*!*Loc::8*!*PL::9*!*Description::10*!*Date_Due::11*!*Date_Sched_Due::12*!*Date_Start::13*!*Act_hours::14*!*Qty_Left::15*!*Notes::16",2)
+
+F.Intrinsic.Control.If(V.uGlobal.uData.UBound,=,0)
+	Gui.F_Main.fgOpenJobs.Rows(1)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Main.fgOpenJobs.Visible(True)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subSort_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subSort.End
+
+Program.Sub.subUpdate_Released.Start
+F.Intrinsic.Control.SetErrorHandler("subUpdate_Released_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.iStatusR.Declare(Long)
+V.Local.iStatusP.Declare(Long)
+V.Local.dIniDate.Declare(Date)
+V.Local.iRow.Declare(Long)
+V.Local.sLine.Declare(String)
+V.Local.sJob.Set(V.Args.job)
+V.Local.sSuffix.Set(V.Args.suffix)
+V.Local.iStatusR.Set(V.Args.statusR)
+V.Local.iStatusP.Set(V.Args.statusP)
+V.Local.iRow.Set(V.Args.row)
+
+V.Local.sConcat.Declare(String)
+
+V.Local.sConcat.Set("Job:",V.Local.sJob," Suffix:",V.Local.sSuffix," P:",V.Local.iStatusP," R:",V.Local.iStatusR,V.Local.sConcat)
+
+F.Intrinsic.Date.DateSerial(1900,1,1,V.Local.dIniDate)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Local.sSql.Set("Select JOB,SUFFIX,REL_DATE,USERID From GAB_4047_WOD ")
+F.Intrinsic.String.Concat(V.Local.sSql,"WHERE JOB='",V.Local.sJob,"' AND SUFFIX='",V.Local.sSuffix,"'",V.Local.sSql)
+
+F.ODBC.Connection!Conx.OpenRecordsetRW("rstUpdRel",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstUpdRel.EOF,=,True)
+	F.ODBC.Conx!rstUpdRel.AddNew
+	F.ODBC.Conx!rstUpdRel.Set!JOB(V.Local.sJob)
+	F.ODBC.Conx!rstUpdRel.Set!SUFFIX(V.Local.sSuffix)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.iStatusR,=,1)
+	F.ODBC.Conx!rstUpdRel.Set!REL_DATE(V.Ambient.Date)
+	Gui.F_Main.fgOpenJobs.TextMatrix(3,V.Local.iRow,V.Ambient.Date)
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uGrid!Job,V.Local.sJob,V.uGlobal.uGrid!Suffix,V.Local.sSuffix,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+		V.uGlobal.uGrid(V.Local.sLine(0))!Rel_Date.Set(V.Ambient.Date)
+		V.uGlobal.uGrid(V.Local.sLine(0))!Released.Set("1")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uData!Job,V.Local.sJob,V.uGlobal.uData!Suffix,V.Local.sSuffix,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+		V.uGlobal.uData(V.Local.sLine(0))!Rel_Date.Set(V.Ambient.Date)
+		V.uGlobal.uData(V.Local.sLine(0))!Released.Set("1")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.ODBC.Conx!rstUpdRel.Set!REL_DATE(V.Local.dIniDate)
+	Gui.F_Main.fgOpenJobs.TextMatrix(3,V.Local.iRow,"")
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uGrid!Job,V.Local.sJob,V.uGlobal.uGrid!Suffix,V.Local.sSuffix,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+		V.uGlobal.uGrid(V.Local.sLine(0))!Rel_Date.Set("")
+		V.uGlobal.uGrid(V.Local.sLine(0))!Released.Set("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uData!Job,V.Local.sJob,V.uGlobal.uData!Suffix,V.Local.sSuffix,V.Local.sLine)
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+		V.uGlobal.uData(V.Local.sLine(0))!Rel_Date.Set("")
+		V.uGlobal.uData(V.Local.sLine(0))!Released.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Conx!rstUpdRel.Set!USERID(V.Caller.User)
+F.ODBC.Conx!rstUpdRel.Update
+F.ODBC.Conx!rstUpdRel.Close
+
+
+V.Local.sSql.Set("Select JOB, SUFFIX, FLAG_WO_PRTD From JOB_HEADER ")
+F.Intrinsic.String.Concat(V.Local.sSql,"WHERE JOB='",V.Local.sJob,"' AND SUFFIX='",V.Local.sSuffix,"'",V.Local.sSql)
+F.ODBC.Connection!Conx.OpenRecordsetRW("rstUpdJobH",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstUpdJobH.EOF,=,False)
+	F.Intrinsic.Control.If(V.Local.iStatusR,=,1)
+		F.Intrinsic.Control.If(V.Local.iStatusP,=,1)
+			F.ODBC.Conx!rstUpdJobH.Set!FLAG_WO_PRTD("R")
+			Gui.F_Main.fgOpenJobs.TextMatrix(1,V.Local.iRow,1)
+			Gui.F_Main.fgOpenJobs.TextMatrix(2,V.Local.iRow,1)
+		F.Intrinsic.Control.Else
+			F.ODBC.Conx!rstUpdJobH.Set!FLAG_WO_PRTD("X")
+			Gui.F_Main.fgOpenJobs.TextMatrix(1,V.Local.iRow,0)
+			Gui.F_Main.fgOpenJobs.TextMatrix(2,V.Local.iRow,1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Local.iStatusR,=,0)
+		F.Intrinsic.Control.If(V.Local.iStatusP,=,1)
+			F.ODBC.Conx!rstUpdJobH.Set!FLAG_WO_PRTD("Y")
+			Gui.F_Main.fgOpenJobs.TextMatrix(1,V.Local.iRow,1)
+			Gui.F_Main.fgOpenJobs.TextMatrix(2,V.Local.iRow,0)
+		F.Intrinsic.Control.Else
+			F.ODBC.Conx!rstUpdJobH.Set!FLAG_WO_PRTD("")
+			Gui.F_Main.fgOpenJobs.TextMatrix(1,V.Local.iRow,0)
+			Gui.F_Main.fgOpenJobs.TextMatrix(2,V.Local.iRow,0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Conx!rstUpdJobH.Update
+F.ODBC.Conx!rstUpdJobH.Close
+
+F.ODBC.Connection!Conx.Close
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subUpdate_Released_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subUpdate_Released.End
+
+program.sub.fgopenjobs_checkclick.start
+F.Intrinsic.Control.SetErrorHandler("fgopenjobs_checkclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTemp.Declare(String)
+V.Local.sTemp2.Declare(String)
+V.Local.iRelStatus.Declare(Long)
+V.Local.iPrtStatus.Declare(Long)
+V.Local.sLine.Declare(String)
+
+V.Global.iMouseRowChk.Set(V.Screen.F_Main!fgOpenJobs.Row)
+V.Global.iMouseColChk.Set(V.Screen.F_Main!fgOpenJobs.Col)
+'Checkbox Options
+F.Intrinsic.Control.If(V.Global.iMouseRowChk,>,0)
+	'Get Job
+	Gui.F_Main.fgOpenJobs.GetTextMatrix(4,V.Global.iMouseRowChk,V.Local.sTemp)
+	'Get Suffix
+	Gui.F_Main.fgOpenJobs.GetTextMatrix(5,V.Global.iMouseRowChk,V.Local.sTemp2)
+
+	'Printed Clicked...
+	F.Intrinsic.Control.If(V.Global.iMouseColChk,=,1)
+		Gui.F_Main.fgOpenJobs.TextMatrix(1,V.Global.iMouseRowChk,1)
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uData!Job,V.Local.sTemp,V.uGlobal.uData!Suffix,V.Local.sTemp2,V.Local.sLine)
+		F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+			F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+			V.uGlobal.uData(V.Local.sLine(0))!Print.Set("1")
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.String.Concat(V.Local.sTemp,"!*!",V.Local.sTemp2,"!*!","1811",V.Local.sTemp)
+		F.Global.General.CallWrapperASync(900100,V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+
+	'Released Clicked	
+	F.Intrinsic.Control.If(V.Global.iMouseColChk,=,2)
+		'Get Released and Printed status
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(2,V.Global.iMouseRowChk,V.Local.iRelStatus)
+		Gui.F_Main.fgOpenJobs.GetTextMatrix(1,V.Global.iMouseRowChk,V.Local.iPrtStatus)
+
+		F.Intrinsic.Control.CallSub(Subupdate_released,"job",V.Local.sTemp,"suffix",V.Local.sTemp2,"statusR",V.Local.iRelStatus,"statusP",V.Local.iPrtStatus,"row",V.Global.iMouseRowChk)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgopenjobs_checkclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.fgopenjobs_checkclick.end
+
+program.sub.optedit_click.start
+F.Intrinsic.Control.SetErrorHandler("optedit_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iRows.Declare(Long)
+V.Local.iC.Declare(Long)
+
+Gui.F_Main.fgOpenJobs.Visible(False)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,0,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,0,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,1,"Type","Checkbox",0)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,1,"type","locked",False)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,2,"Type","Checkbox",0)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,2,"type","locked",False)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,3,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,3,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,4,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,4,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,4,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,4,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,5,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,5,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,5,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,5,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,6,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,6,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,7,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,7,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,7,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,7,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,8,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,8,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,9,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,9,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,10,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,10,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,11,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,11,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,11,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(3,12,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,12,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,12,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(3,13,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,13,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,13,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(3,14,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,14,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,14,"Format","Mask","#######.00")
+Gui.F_Main.fgOpenJobs.BuildStyle(3,15,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,15,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,16,"type","locked",False)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,16,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(3,16,"Color","Back",9961297)
+
+F.Intrinsic.Math.Sub(V.Screen.F_Main!fgOpenJobs.Rows,1,V.Local.iRows)
+F.Intrinsic.Control.For(V.Local.iC,1,V.Local.iRows,1)
+		Gui.F_Main.fgOpenJobs.ApplyStyle(V.Local.iC,3)
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Main.fgOpenJobs.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optedit_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.optedit_click.end
+
+program.sub.optview_click.start
+F.Intrinsic.Control.SetErrorHandler("optview_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iRows.Declare(Long)
+V.Local.iC.Declare(Long)
+
+Gui.F_Main.fgOpenJobs.Visible(False)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,0,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,0,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,1,"Type","Checkbox",0)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,1,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,2,"Type","Checkbox",0)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,2,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,3,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,3,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,4,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,4,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,4,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,4,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,5,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,5,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,5,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,5,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,6,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,6,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,7,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,7,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,7,"fontstyle","underline",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,7,"Color","Fore",16711680)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,8,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,8,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,9,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,9,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,10,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,10,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,11,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,11,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,11,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(4,12,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,12,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,12,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(4,13,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,13,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,13,"Format","Mask","mm/dd/yyyy")
+Gui.F_Main.fgOpenJobs.BuildStyle(4,14,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,14,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,14,"Format","Mask","#######.00")
+Gui.F_Main.fgOpenJobs.BuildStyle(4,15,"type","locked",True)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,15,"Format","alignment",4)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,16,"type","locked",False)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,16,"Format","alignment",1)
+Gui.F_Main.fgOpenJobs.BuildStyle(4,16,"Color","Back",9961297)
+
+F.Intrinsic.Math.Sub(V.Screen.F_Main!fgOpenJobs.Rows,1,V.Local.iRows)
+F.Intrinsic.Control.For(V.Local.iC,1,V.Local.iRows,1)
+		Gui.F_Main.fgOpenJobs.ApplyStyle(V.Local.iC,4)
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_Main.fgOpenJobs.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("optview_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.optview_click.end
+
+Program.Sub.sub_CheckTables.Start
+F.Intrinsic.Control.SetErrorHandler("sub_CheckTables_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.bTable.Declare(Boolean)
+
+'Create/Open Connection
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!Conx.TableExists("GAB_4047_WOD",V.Local.bTable)
+F.Intrinsic.Control.If(V.Local.bTable,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE GAB_4047_WOD(JOB CHAR(6), SUFFIX CHAR(3), REL_DATE DATE, USERID CHAR(8)); ")
+F.Intrinsic.Control.EndIf
+
+
+'Close the Connection
+F.ODBC.Connection!Conx.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("sub_CheckTables_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4047_SF_OpenJobReview_GSS_Standard.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.sub_CheckTables.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_SF_OpenJobReview_GSS_Standard$}$RICARDO$}$5/15/2013
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$'Coded by:  RRC
+'Project Start Date:  05/15/2014
+'Customer:  (Mike Melzer)
+'ProjectName:  Open Job Review GAB_SF_OpenJobReview_GSS_Standard
+'Notes:
+'    Script Allows user to Change/Update USER_6 field on WO user fields
+'    Printed and Released checkboxes will Update the FLAG_WO_PRTD field in the JOB_HEADER
+'    Changed Est Hours by Start Date
+
+'Table(s):
+GAB_4047_WOD, Table with released date and user
+
+
+${$4$}$0$}$$}$1$}$-1$}$SUPERVSR$}$5/15/2014 8:10:33 PM$}$'    Changed Fields, new UDTs
+'     User in EDITWO group will be able to Open/Edit the WO
+'     Changed Est Hours by Start Date
+${$4$}$0$}$$}$2$}$-1$}$SUPERVSR$}$5/15/2014 8:09:46 PM$}$Changed Est Hours by Date Start
+${$4$}$0$}$$}$3$}$-1$}$SUPERVSR$}$5/15/2014 8:09:58 PM$}$test
+${$4$}$0$}$$}$4$}$-1$}$SUPERVSR$}$5/15/2014 8:10:07 PM$}$adfasd
+Program.Sub.Comments.End
+
